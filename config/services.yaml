@@ -22,3 +22,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    _instanceof:
+        App\Webhook\Github\Strategy\GithubEventStrategy:
+            tags: ['github_event_strategy']
+
+    App\Webhook\Github\GithubEventFactory:
+        arguments:
+            - !tagged_iterator 'github_event_strategy'
