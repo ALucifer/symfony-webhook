@@ -22,5 +22,7 @@ class GithubEventFactory
                 return $strategy->transform($name, $payload);
             }
         }
+
+        throw new \LogicException('Strategy not implemented');
     }
 }

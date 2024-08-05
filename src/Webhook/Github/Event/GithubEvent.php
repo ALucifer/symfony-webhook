@@ -8,8 +8,10 @@ use Symfony\Component\RemoteEvent\RemoteEvent;
 abstract class GithubEvent extends RemoteEvent
 {
     private const PING = 'ping';
+    private const PUSH = 'push';
     private const ALL = [
-        self::PING
+        self::PING,
+        self::PUSH,
     ];
 
     public function __construct(string $name, string $id, array $payload)
