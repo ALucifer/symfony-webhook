@@ -1,12 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>Hello world</h1>
-<script>
-    const eventSource = new EventSource("{{ mercure('test') }}");
-    eventSource.onmessage = event => {
-        // Will be called every time an update is published by the server
-        console.log(JSON.parse(event.data));
-    }
-</script>
+    <div class="container">
+        <div class="header">Notifications</div>
+        <div id="app"></div>
+    </div>
 {% endblock %}
